@@ -1,0 +1,73 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "O You Who Believe"
+  reader-mode: true
+  page-footer:
+    left: |
+      This is IMS2e!
+    right: |
+      This book was built with <a href="https://quarto.org/">Quarto</a>.
+  cover-image: images/IMS2_front_cover_WIP.png
+  favicon: images/openintro.png
+  site-url: https://openintro-ims2.netlify.app/
+  repo-url: https://github.com/OpenIntroStat/ims/
+  repo-branch: main
+  repo-actions: [edit, issue]
+  chapters:
+    - index.qmd
+
+    - content/authors.qmd
+    - content/preface.qmd
+
+    - part: content/introduction-to-data.qmd
+      chapters:
+        - content/01-data-hello.qmd
+        - content/02-data-design.qmd
+        - content/03-surah-An-Nisa.qmd
+        
+    - part: content/intro2.qmd
+      chapters:
+        - content/04-explore-categorical.qmd
+        - content/05-explore-numerical.qmd
+        - content/06-explore-applications.qmd
+        
+  appendices:
+    - content/references.qmd
+
+bibliography: 
+    - content/book.bib
+    - content/eoce.bib
+    - content/packages.bib
+
+format:
+  html:
+    theme:
+      light: [cosmo, scss/ims-style.scss]
+      dark:  [cosmo, scss/ims-style-dark.scss]
+    code-link: true
+    mainfont: Atkinson Hyperlegible
+    monofont: Source Code Pro
+    author-meta: "AbdurRahman"
+    lightbox: 
+      match: auto
+      loop: false
+  
+editor: source
+
+execute:
+  freeze: auto
+  fig-width: 6
+  fig-show: hold
+  fig-dpi: 300
+  fig-align: center
+  echo: false
+  cache: false
+  warning: false 
+
+knitr:
+  opts_chunk: 
+    dev: "ragg_png"
+    fig-asp: 0.618  # 1 / phi

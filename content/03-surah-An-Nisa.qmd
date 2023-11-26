@@ -1,0 +1,87 @@
+# Applications: Data {#sec-data-applications}
+
+## Case study: Olympic 1500m {#sec-case-study-paralympics}
+
+::: {.guidedpractice data-latex=""}
+Do these data come from an observational study or an experiment?[^03-data-applications-1]
+:::
+
+[^03-data-applications-1]: This is an observational study.
+    Researchers collected data on past gold medal race times in both Olympic and Paralympic Games.
+
+::: {.guidedpractice data-latex=""}
+There are `r nrow(paralympic_1500)` rows and `r ncol(paralympic_1500)` columns in the dataset.
+What does each row and each column represent?[^03-data-applications-2]
+:::
+
+[^03-data-applications-2]: Each row represents a 1500m gold medal race and each column represents a variable containing information on each race.
+
+
+::: {.important data-latex=""}
+**Simpson's paradox.**
+
+Simpson's paradox happens when an association or relationship between two variables in one direction (e.g., positive) reverses (e.g., becomes negative) when a third variable is considered.
+:::
+
+## Interactive R tutorials {#sec-data-tutorials}
+
+Navigate the concepts you've learned in this chapter in R using the following self-paced tutorials.
+All you need is your browser to get started!
+
+::: {.alltutorials data-latex=""}
+[Tutorial 1: Introduction to data](https://openintrostat.github.io/ims-tutorials/01-data/)
+
+::: {.content-hidden unless-format="pdf"}
+<https://openintrostat.github.io/ims-tutorials/01-data>
+:::
+:::
+
+::: {.singletutorial data-latex=""}
+[Tutorial 1 - Lesson 1: Language of data](https://openintro.shinyapps.io/ims-01-data-01/)
+
+::: {.content-hidden unless-format="pdf"}
+<https://openintro.shinyapps.io/ims-01-data-01>
+:::
+:::
+
+::: {.singletutorial data-latex=""}
+[Tutorial 1 - Lesson 2: Types of studies](https://openintro.shinyapps.io/ims-01-data-02/)
+
+::: {.content-hidden unless-format="pdf"}
+<https://openintro.shinyapps.io/ims-01-data-02>
+:::
+:::
+
+::: {.singletutorial data-latex=""}
+[Tutorial 1 - Lesson 3: Sampling strategies and experimental design](https://openintro.shinyapps.io/ims-01-data-03/)
+
+::: {.content-hidden unless-format="pdf"}
+<https://openintro.shinyapps.io/ims-01-data-03>
+:::
+:::
+
+::: {.singletutorial data-latex=""}
+[Tutorial 1 - Lesson 4: Case study](https://openintro.shinyapps.io/ims-01-data-04/)
+
+::: {.content-hidden unless-format="pdf"}
+<https://openintro.shinyapps.io/ims-01-data-04>
+:::
+:::
+
+::: {.content-hidden unless-format="pdf"}
+You can also access the full list of tutorials supporting this book at\
+<https://openintrostat.github.io/ims-tutorials>.
+:::
+
+::: {.content-visible when-format="html"}
+You can also access the full list of tutorials supporting this book [here](https://openintrostat.github.io/ims-tutorials).
+:::
+
+::: {.content-hidden unless-format="pdf"}
+You can also access the full list of labs supporting this book at\
+<https://www.openintro.org/go?id=ims-r-labs>.
+:::
+
+::: {.content-visible when-format="html"}
+You can also access the full list of labs supporting this book [here](https://www.openintro.org/go?id=ims-r-labs).
+:::

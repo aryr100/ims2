@@ -1,0 +1,328 @@
+# Exploring numerical data {#sec-explore-numerical}
+
+::: {.chapterintro data-latex=""}
+This chapter focuses on exploring **numerical** data using summary statistics and visualizations.
+The summaries and graphs presented in this chapter are created using statistical software; however, since this might be your first exposure to the concepts, we take our time in this chapter to detail how to create them.
+Mastery of the content presented in this chapter will be crucial for understanding the methods and techniques introduced in the rest of the book.
+:::
+
+This variable is numerical since we can sensibly discuss the numerical difference of the size of two loans.
+On the other hand, area codes and zip codes are not numerical, but rather they are categorical variables.
+
+Throughout this chapter, we will apply numerical methods using the `loan50` and `county` datasets, which were introduced in @sec-data-basics.
+If you'd like to review the variables from either dataset, see Tables @tbl-loan-50-variables and @tbl-county-variables.
+------------------------------------------------------------------------
+
+The relationship is evidently **nonlinear**, as highlighted by the dashed line.
+This is different from previous scatterplots we have seen, which indicate very little, if any, curvature in the trend.
+:::
+
+
+::: {.guidedpractice data-latex=""}
+What do scatterplots reveal about the data, and how are they useful?[^05-explore-numerical-1]
+:::
+
+[^05-explore-numerical-1]: Answers may vary.
+    Scatterplots are helpful in quickly spotting associations relating variables, whether those associations come in the form of simple trends or whether those relationships are more complex.
+
+::: {.guidedpractice data-latex=""}
+Describe two variables that would have a horseshoe-shaped association in a scatterplot $(\cap$ or $\frown).$[^05-explore-numerical-2]
+:::
+
+[^05-explore-numerical-2]: Consider the case where your vertical axis represents something "good" and your horizontal axis represents something that is only good in moderation.
+    Health and water consumption fit this description: we require some water to survive, but consume too much and it becomes toxic and can kill a person.
+
+## Dot plots and the mean {#sec-dotplots}
+
+Sometimes we are interested in the distribution of a single variable.
+In these cases, a dot plot provides the most basic of displays.
+
+**Mean.**
+
+The sample mean can be calculated as the sum of the observed values divided by the number of observations:
+
+
+The `loan50` dataset represents a sample from a larger population of loans made through Lending Club.
+We could compute a mean for the entire population in the same way as the sample mean.
+However, the population mean has a special label: $\mu.$ The symbol $\mu$ is the Greek letter *mu* and represents the average of all observations in the population.
+Sometimes a subscript, such as $_x,$ is used to represent which variable the population mean refers to, e.g., $\mu_x.$ Oftentimes it is too expensive to measure the population mean precisely, so we often estimate $\mu$ using the sample mean, $\bar{x}.$
+
+::: {.pronunciation data-latex=""}
+The Greek letter $\mu$ is pronounced *mu*, listen to the pronunciation [here](https://youtu.be/PStgY5AcEIw?t=47).
+:::
+
+::: {.workedexample data-latex=""}
+Although we do not have an ability to *calculate* the average interest rate across all loans in the populations, we can *estimate* the population value using the sample data.
+Based on the sample of 50 loans, what would be a reasonable estimate of $\mu_x,$ the mean interest rate for all loans in the full dataset?
+
+------------------------------------------------------------------------
+
+The mean is useful because it allows us to rescale or standardize a metric into something more easily interpretable and comparable.
+Suppose we would like to understand if a new drug is more effective at treating asthma attacks than the standard drug.
+A trial of 1,500 adults is set up, where 500 receive the new drug, and 1000 receive a standard drug in the control group.
+Results of this trial are summarized in @tbl-drug-asthma-results.
+
+Comparing the raw counts of 200 to 300 asthma attacks would make it appear that the new drug is better, but this is an artifact of the imbalanced group sizes.
+Instead, we should look at the average number of asthma attacks per patient in each group:
+
+-   New drug: $200 / 500 = 0.4$ asthma attacks per patient
+-   Standard drug: $300 / 1000 = 0.3$ asthma attacks per patient
+
+The standard drug has a lower average number of asthma attacks per patient than the average in the treatment group.
+
+::: {.workedexample data-latex=""}
+Come up with another example where the mean is useful for making comparisons.
+
+------------------------------------------------------------------------
+
+Emilio opened a food truck last year where he sells burritos, and his business has stabilized over the last 3 months.
+Over that 3-month period, he has made \$11,000 while working 625 hours.
+Emilio's average hourly earnings provides a useful statistic for evaluating whether his venture is, at least from a financial perspective, worth it:
+
+$$ \frac{\$11000}{625\text{ hours}} = \$17.60\text{ per hour} $$
+
+By knowing his average hourly wage, Emilio now has put his earnings into a standard unit that is easier to compare with many other jobs that he might consider.
+:::
+
+::: {.workedexample data-latex=""}
+Suppose we want to compute the average income per person in the US.
+To do so, we might first think to take the mean of the per capita incomes across the 3,142 counties in the `county` dataset.
+What would be a better approach?
+
+------------------------------------------------------------------------
+
+The `county` dataset is special in that each county actually represents many individual people.
+If we were to simply average across the `income` variable, we would be treating counties with 5,000 and 5,000,000 residents equally in the calculations.
+Instead, we should compute the total income for each county, add up all the counties' totals, and then divide by the number of people in all the counties.
+If we completed these steps with the `county` data, we would find that the per capita income for the US is \$30,861.
+Had we computed the *simple* mean of per capita income across counties, the result would have been just \$26,093!
+
+This example used what is called a **weighted mean**.
+For more information on this topic, check out the following online supplement regarding [weighted means](https://www.openintro.org/go/?id=stat_extra_weighted_mean).
+:::
+
+## Histograms and shape {#sec-histograms}
+
+Dot plots show the exact value for each observation.
+They are useful for small datasets but can become hard to read with larger samples.
+Rather than showing the value of each observation, we prefer to think of the value as belonging to a *bin*.
+For example, in the `loan50` dataset, we created a table of counts for the number of loans with interest rates between 5.0% and 7.5%, then the number of loans with rates between 7.5% and 10.0%, and so on.
+Observations that fall on the boundary of a bin (e.g., 10.00%) are allocated to the lower bin.
+The tabulation is shown in @tbl-binnedIntRateAmountTable, and the binned counts are plotted as bars into what is called a **histogram**.
+Note that the histogram resembles a more heavily binned version of the stacked dot plot shown in @fig-loan-int-rate-dotplot.
+
+Histograms provide a view of the **data density**.
+Higher bars represent where the data are relatively more common.
+For instance, there are many more loans with rates between 5% and 10% than loans with rates between 20% and 25% in the dataset.
+The bars make it easy to see how the density of the data changes relative to the interest rate.
+
+Histograms are especially convenient for understanding the shape of the data distribution.
+suggests that most loans have rates under 15%, while only a handful of loans have rates above 20%.
+When the distribution of a variable trails off to the right in this way and has a longer right **tail**, the shape is said to be **right skewed**.[^05-explore-numerical-5]
+
+[^05-explore-numerical-5]: Other ways to describe data that are right skewed: skewed to the right, skewed to the high end, or skewed to the positive end.
+
+Variables with the reverse characteristic -- a long, thinner tail to the left -- are said to be **left skewed**.
+We also say that such a distribution has a long left tail.
+Variables that show roughly equal trailing off in both directions are called **symmetric**.
+
+::: {.important data-latex=""}
+When data trail off in one direction, the distribution has a **long tail**.
+If a distribution has a long left tail, it is left skewed.
+If a distribution has a long right tail, it is right skewed.
+:::
+
+In addition to looking at whether a distribution is skewed or symmetric, histograms can be used to identify modes.
+A **mode** is represented by a prominent peak in the distribution.
+There is only one prominent peak in the histogram of `interest_rate`.
+
+A definition of *mode* sometimes taught in math classes is the value with the most occurrences in the dataset.
+However, for many real-world datasets, it is common to have *no* observations with the same value in a dataset, making this definition impractical in data analysis.
+
+@fig-singleBiMultiModalPlots shows histograms that have one, two, or three prominent peaks.
+Such distributions are called **unimodal**, **bimodal**, and **multimodal**, respectively.
+Any distribution with more than two prominent peaks is called multimodal.
+Notice that there was one prominent peak in the unimodal distribution with a second less prominent peak that was not counted since it only differs from its neighboring bins by a few observations.
+
+## Variance and standard deviation {#sec-variance-sd}
+
+The mean was introduced as a method to describe the center of a variable, and **variability**\index{variability} in the data is also important.
+Here, we introduce two measures of variability: the variance and the standard deviation.
+Both of these are very useful in data analysis, even though their formulas are a bit tedious to calculate by hand.
+The standard deviation is the easier of the two to comprehend, as it roughly describes how far away the typical observation is from the mean.
+
+We call the distance of an observation from its mean its **deviation**.
+Below are the deviations for the $1^{st},$ $2^{nd},$ $3^{rd},$ and $50^{th}$ observations in the `interest_rate` variable:
+
+We divide by $n - 1,$ rather than dividing by $n,$ when computing a sample's variance.
+There's some mathematical nuance here, but the end result is that doing this makes this statistic slightly more reliable and useful.
+
+Notice that squaring the deviations does two things.
+First, it makes large values relatively much larger.
+Second, it gets rid of any negative signs.
+
+::: {.important data-latex=""}
+**Standard deviation.**
+
+The sample standard deviation can be calculated as the square root of the sum of the squared distance of each value from the mean divided by the number of observations minus one:
+
+$$s = \sqrt{\frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n-1}}$$
+:::
+
+The **standard deviation** is defined as the square root of the variance:
+
+
+While often omitted, a subscript of $_x$ may be added to the variance and standard deviation, i.e., $s_x^2$ and $s_x^{},$ if it is useful as a reminder that these are the variance and standard deviation of the observations represented by $x_1,$ $x_2,$ ..., $x_n.$
+
+::: {.important data-latex=""}
+**Variance and standard deviation.**
+
+The variance is the average squared distance from the mean.
+The standard deviation is the square root of the variance.
+The standard deviation is useful when considering how far the data are distributed from the mean.
+
+The standard deviation represents the typical deviation of observations from the mean.
+Often about 68% of the data will be within one standard deviation of the mean and about 95% will be within two standard deviations.
+However, these percentages are not strict rules.
+:::
+
+Like the mean, the population values for variance and standard deviation have special symbols: $\sigma^2$ for the variance and $\sigma$ for the standard deviation.
+
+::: {.pronunciation data-latex=""}
+The Greek letter $\sigma$ is pronounced *sigma*, listen to the pronunciation [here](https://youtu.be/PStgY5AcEIw?t=72).
+:::
+
+
+::: {.guidedpractice data-latex=""}
+A good description of the shape of a distribution should include modality and whether the distribution is symmetric or skewed to one side.
+Using @fig-severalDiffDistWithSdOf1 as an example, explain why such a description is important.[^05-explore-numerical-9]
+:::
+
+[^05-explore-numerical-9]: @fig-severalDiffDistWithSdOf1 shows three distributions that look quite different, but all have the same mean, variance, and standard deviation.
+    Using modality, we can distinguish between the first plot (bimodal) and the last two (unimodal).
+    Using skewness, we can distinguish between the last plot (right skewed) and the first two.
+    While a picture, like a histogram, tells a more complete story, we can use modality and shape (symmetry/skew) to characterize basic information about a distribution.
+
+::: {.workedexample data-latex=""}
+Describe the distribution of the `interest_rate` variable using the histogram in.
+The description should incorporate the center, variability, and shape of the distribution, and it should also be placed in context.
+Also note any especially unusual cases.
+
+------------------------------------------------------------------------
+
+The distribution of interest rates is unimodal and skewed to the high end.
+Many of the rates fall near the mean at 11.57%, and most fall within one standard deviation (5.05%) of the mean.
+There are a few exceptionally large interest rates in the sample that are above 20%.
+:::
+
+In practice, the variance and standard deviation are sometimes used as a means to an end, where the "end" is being able to accurately estimate the uncertainty associated with a sample statistic.
+For example, in @sec-foundations-mathematical the standard deviation is used in calculations that help us understand how much a sample mean varies from one sample to the next.
+
+## Box plots, quartiles, and the median {#sec-boxplots}
+
+The dark line inside the box represents the **median**, which splits the data in half.
+50% of the data fall below this value and 50% fall above it.
+
+::: {.important data-latex=""}
+**Median: the number in the middle.**
+
+If the data are ordered from smallest to largest, the **median** is the observation right in the middle.
+If there are an even number of observations, there will be two values in the middle, and the median is taken as their average.
+:::
+
+The second step in building a box plot is drawing a rectangle to represent the middle 50% of the data.
+The length of the box is called the **interquartile range**, or **IQR** for short.
+It, like the standard deviation, is a measure of \index{variability}variability in data.
+The more variable the data, the larger the standard deviation and IQR tend to be.
+The two boundaries of the box are called the **first quartile** (the $25^{th}$ percentile, i.e., 25% of the data fall below this value) and the **third quartile** (the $75^{th}$ percentile, i.e., 75% of the data fall below this value), and these are often labeled $Q_1$ and $Q_3,$ respectively.
+
+The median and IQR are called **robust statistics** because extreme observations have little effect on their values: moving the most extreme value generally has little influence on these statistics.
+On the other hand, the mean and standard deviation are more heavily influenced by changes in extreme observations, which can be important in some situations.
+
+
+::: {.workedexample data-latex=""}
+The median and IQR did not change under the three scenarios in @tbl-robustOrNotTable.
+Why might this be the case?
+
+------------------------------------------------------------------------
+
+The median and IQR are only sensitive to numbers near $Q_1,$ the median, and $Q_3.$ Since values in these regions are stable in the three datasets, the median and IQR estimates are also stable.
+:::
+
+## Transforming data {#sec-transforming-data}
+
+When data are very strongly skewed, we sometimes transform them, so they are easier to model.
+@fig-county-unemployed-pop-transform shows two right skewed distributions: distribution of the percentage of unemployed people and the distribution of the population in all counties in the United States.
+The distribution of population is more strongly skewed than the distribution of unemployed, hence the log transformation results in a much bigger change in the shape of the distribution.
+
+::: {.workedexample data-latex=""}
+Consider the histogram of county populations shown in Plot C of @fig-county-unemployed-pop-transform, which shows extreme skew.
+What characteristics of the plot keep it from being useful?
+
+------------------------------------------------------------------------
+
+Nearly all of the data fall into the left-most bin, and the extreme skew obscures many of the potentially interesting details at the low values.
+:::
+
+There are some standard transformations that may be useful for strongly right skewed data where much of the data is positive but clustered near zero.
+A **transformation** is a rescaling of the data using a function.
+For instance, a plot of the logarithm (base 10) of unemployment rates and county populations results in the new histograms on the right in @fig-county-unemployed-pop-transform.
+The transformed data are symmetric, and any potential outliers appear much less extreme than in the original data set.
+By reigning in the outliers and extreme skew, transformations often make it easier to build statistical models for the data.
+
+Transformations other than the logarithm can be useful, too.
+For instance, the square root $(\sqrt{\text{original observation}})$ and inverse $\bigg ( \frac{1}{\text{original observation}} \bigg )$ are commonly used by data scientists.
+Common goals in transforming data are to see the data structure differently, reduce skew, assist in modeling, or straighten a nonlinear relationship in a scatterplot.
+
+## Mapping data
+
+\index{intensity map}
+
+The `county` dataset offers many numerical variables that we could plot using dot plots, scatterplots, or box plots, but they can miss the true nature of the data as geographic.
+When we encounter geographic data, we should create an **intensity map**, where colors are used to show higher and lower values of a variable.
+Figures @fig-county-intensity-map-poverty-unemp and @fig-county-intensity-map-howownership-median-income show intensity maps for poverty rate in percent (`poverty`), unemployment rate in percent (`unemployment_rate`), homeownership rate in percent (`homeownership`), and median household income in \$1000s (`median_hh_income`).
+The color key indicates which colors correspond to which values.
+The intensity maps are not generally very helpful for getting precise values in any given county, but they are very helpful for seeing geographic trends and generating interesting research questions or hypotheses.
+
+::: {.workedexample data-latex=""}
+What interesting features are evident in the poverty and unemployment rate intensity maps?
+
+------------------------------------------------------------------------
+
+Poverty rates are evidently higher in a few locations.
+Notably, the deep south shows higher poverty rates, as does much of Arizona and New Mexico.
+High poverty rates are evident in the Mississippi flood plains a little north of New Orleans and in a large section of Kentucky.
+
+The unemployment rate follows similar trends, and we can see correspondence between the two variables.
+In fact, it makes sense for higher rates of unemployment to be closely related to poverty rates.
+One observation that stands out when comparing the two maps: the poverty rate is much higher than the unemployment rate, meaning while many people may be working, they are not making enough to break out of poverty.
+:::
+
+::: {.guidedpractice data-latex=""}
+What interesting features are evident in the median household income intensity map in @fig-county-intensity-map-howownership-median-income?[^05-explore-numerical-14]
+:::
+
+[^05-explore-numerical-14]: Answers will vary.
+    There is some correspondence between high earning and metropolitan areas, where we can see darker spots (higher median household income), though there are several exceptions.
+    You might look for large cities you are familiar with and try to spot them on the map as dark spots.
+
+\clearpage
+
+## Chapter review {#sec-chp5-review}
+
+### Summary
+
+Fluently working with numerical variables is an important skill for data analysts.
+In this chapter we have introduced different visualizations and numerical summaries applied to numeric variables.
+The graphical visualizations are even more descriptive when two variables are presented simultaneously.
+We presented scatterplots, dot plots, histograms, and box plots.
+Numerical variables can be summarized using the mean, median, quartiles, standard deviation, and variance.
+
+### Terms
+
+We introduced the following terms in the chapter.
+If you're not sure what some of these terms mean, we recommend you go back in the text and review their definitions.
+We are purposefully presenting them in alphabetical order, instead of in order of appearance, so they will be a little more challenging to locate.
+However, you should be able to easily spot them as **bolded text**.
+
+\clearpage
