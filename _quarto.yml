@@ -7,7 +7,7 @@ book:
   reader-mode: true
   page-footer:
     left: |
-      This is IMS2e!
+      This is OYWB!
     right: |
       This book was built with <a href="https://quarto.org/">Quarto</a>.
   cover-image: images/IMS2_front_cover_WIP.png
