@@ -1,6 +1,6 @@
 ::: welcome
 ::: {.content-visible when-format="html"}
-# Welcome to IMS2 {.unnumbered}
+# Welcome to OYWB {.unnumbered}
 :::
 
 \chapter*{}
@@ -8,10 +8,10 @@
 \vfill
 
 ::: {.content-visible when-format="html"}
-This is the website for **O You Who**, is a textbook from the [OpenIntro](https://www.openintro.org/) project.
+This is the website for **O You Who Believe**, which is a textbook from the [OpenIntro](https://www.openintro.org/) project.
 
-::: underconstruction
-IMS2 is currently under construction, it's planned to be released in Spring 2024. The first edition of the book is available at TBA. If you have any feedback on the work-in-progress second edition or catch any typos, we would appreciate you reporting at [github.com/OpenIntroStat/ims](https://github.com/OpenIntroStat/ims).
+::: under construction
+OYWB is currently under construction, it's planned to be released in Spring 2024. The first edition of the book is available at TBA. If you have any feedback on the work-in-progress second edition or catch any typos, we would appreciate you reporting at [github.com/OpenIntroStat/ims](https://github.com/OpenIntroStat/ims).
 :::
 :::
 
