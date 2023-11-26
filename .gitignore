@@ -1,22 +1,19 @@
-.Rproj.user
+### R ###
+# History files
 .Rhistory
-.RData
-*.bak
-render*
+.Rapp.history
 
-*.xlsx
-ims.rds
-icons8
-unused/
-tex-experimentation/
-ims.aux
-ims.idx
-ims.log
-ims.toc
-ims.tex
-ims.pdf
-ims.md
-ims.synctex(busy)
+# Session Data files
+.RData
+.RDataTmp
+
+# User-specific files
+.Ruserdata
+
+# RStudio files
+.Rproj.user/
+.Rproj.user
+
+### Quarto ###
+.quarto/
 /.quarto/
-/_site/
-/_book/
