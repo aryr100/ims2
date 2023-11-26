@@ -37,12 +37,9 @@ Copyright $\copyright$ 2023.
 
 Second Edition.
 
-Version date: `r format(Sys.Date(), "%B %d, %Y")`.
+Version date: 1.0.
 
-This textbook and its supplements, including slides, labs, and interactive tutorials, may be downloaded for free at\
-[**openintro.org/book/ims**](http://openintro.org/book/ims).
-
-This textbook is a derivative of *OpenIntro Statistics* 4th Edition and *Introduction to Statistics with Randomization and Simulation* 1st Edition by Diez, Barr, and Çetinkaya-Rundel, and it's available under a Creative Commons Attribution-ShareAlike 3.0 Unported United States License.
+This textbook is available under a Creative Commons Attribution-ShareAlike 4.0 Unported United States License.
 License details are available at the Creative Commons website:\
 [**creativecommons.org**](https://www.openintro.org/go/?id=creativecommons_org&referrer=ims1_pdf).
 :::
