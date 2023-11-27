@@ -4,9 +4,9 @@
     "href": "index.html",
     "title": "O You Who Believe",
     "section": "",
-    "text": "Welcome to IMS2\nThis is the website for O You Who, is a textbook from the OpenIntro project.\n\nIMS2 is currently under construction, it’s planned to be released in Spring 2024. The first edition of the book is available at TBA. If you have any feedback on the work-in-progress second edition or catch any typos, we would appreciate you reporting at github.com/OpenIntroStat/ims.\n\n\nCopyright © 2023.\nSecond Edition.\nVersion date: r format(Sys.Date(), \"%B %d, %Y\").\nThis textbook and its supplements, including slides, labs, and interactive tutorials, may be downloaded for free at\nopenintro.org/book/ims.\nThis textbook is a derivative of OpenIntro Statistics 4th Edition and Introduction to Statistics with Randomization and Simulation 1st Edition by Diez, Barr, and Çetinkaya-Rundel, and it’s available under a Creative Commons Attribution-ShareAlike 3.0 Unported United States License. License details are available at the Creative Commons website:\ncreativecommons.org.",
+    "text": "Welcome to OYWB\nThis is the website for O You Who Believe, which is a textbook from the OpenIntro project.\n::: under construction OYWB is currently under construction, it’s planned to be released TBA. The first edition of the book is available TBA. If you have any feedback on the work-in-progress first edition or catch any typos, we would appreciate you reporting at github.com/aryr100/ims2.\n\n\nCopyright © 2023.\nSecond Edition.\nVersion date: 1.0.\nThis textbook is available under a Creative Commons Attribution-ShareAlike 4.0 Unported United States License. License details are available at the Creative Commons website:\ncreativecommons.org. :::",
     "crumbs": [
-      "Welcome to IMS2"
+      "Welcome to OYWB"
     ]
   },
   {

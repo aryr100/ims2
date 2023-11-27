@@ -4,7 +4,7 @@
 
 As we're working on the 1st edition of this book, we realized that we weren't too enamored by the name, and decided to rename the book to "Introduction to Modern Statistics" to reflect better the content covered in the book, which features simulation-based inference but also many non-inference topics!
 
-If you're looking for the source files for the 1st edition of OpenIntro - Introduction to Statistics with Randomization and Simulation, please download the zipped release [here](https://github.com/OpenIntroStat/randomization-and-simulation/releases).
+If you're looking for the source files for the 1st edition of OpenIntro - Introduction to Statistics with Randomization and Simulation, please download the zipped release [here](https://github.com/aryr100/ims2/releases).
 
 ------------------------------------------------------------------------
 

@@ -1,4 +1,4 @@
-This document contains the proposed outline for OpenIntro - Introductory Statistics with Randomization and Simulation, Second Edition.
+This document contains the proposed outline for OpenIntro - Introductory O You Who Believe, First Edition.
 
 ## Chp 1. Introduction to data
 
