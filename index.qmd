@@ -10,7 +10,7 @@
 ::: {.content-visible when-format="html"}
 This is the website for **O You Who Believe**, which is a textbook from the [OpenIntro](https://www.openintro.org/) project.
 
-::: under construction
+::: underconstruction
 OYWB is currently under construction, it's planned to be released TBA. The first edition of the book is available TBA. If you have any feedback on the work-in-progress first edition or catch any typos, we would appreciate you reporting at [github.com/aryr100/ims2](https://github.com/aryr100/ims2).
 :::
 :::
@@ -27,6 +27,8 @@ The book will always be available for free here. It is also available in PDF (fo
 <br><br>
 -->
 ```
+
+
 ::: {.content-visible when-format="html"}
 Copyright © 2023.
 :::
