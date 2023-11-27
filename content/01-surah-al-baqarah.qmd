@@ -1,0 +1,29 @@
+# Surah Al-Baqarah {#sec-surah-al-baqarah}
+
+::: {.chapterintro data-latex=""}
+Scientists seek to answer questions using rigorous methods and careful observations.
+These observations -- collected from the likes of field notes, surveys, and experiments -- form the backbone of a statistical investigation and are called **data**.
+Statistics is the study of how best to collect, analyze, and draw conclusions from data.
+In this first chapter, we focus on both the properties of data and on the collection of data.
+:::
+
+Al-Baqarah, the second chapter of the Quran.\
+Comprised of 286 verses that were revealed in Medina.\
+This chapter, also known in English as "The Cow"\
+There are 11 Ayat in this Surah, with the opening
+
+*O You Who Believe*
+
+See the table below
+
+::: {#tbl:02-ayat}
+104, 153, 172, 178, 183, 208, 254, 264, 267, 278, 282.
+:::
+
+{{< pagebreak >}}
+
+{{< include 01/ayat-104.qmd >}}
+
+{{< pagebreak >}}
+
+{{< include 01/ayat-153.qmd >}}

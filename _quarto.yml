@@ -10,7 +10,7 @@ book:
       This is OYWB!
     right: |
       This book was built with <a href="https://quarto.org/">Quarto</a>.
-  cover-image: images/IMS2_front_cover_WIP.png
+  cover-image: images/1.png
   favicon: images/openintro.png
   repo-url: https://github.com/aryr100/ims2/
   repo-branch: main
@@ -21,9 +21,9 @@ book:
     - content/authors.qmd
     - content/preface.qmd
 
-    - part: content/introduction-to-data.qmd
+    - part: content/Juz-1.qmd
       chapters:
-        - content/01-data-hello.qmd
+        - content/01-surah-al-baqarah.qmd
         - content/02-data-design.qmd
         - content/03-surah-An-Nisa.qmd
         
