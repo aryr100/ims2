@@ -35,7 +35,7 @@ Copyright © 2023.
 Copyright $\copyright$ 2023.
 :::
 
-Second Edition.
+First Edition.
 
 Version date: 1.0.
 
