@@ -37,9 +37,9 @@ Copyright © 2023.
 Copyright $\copyright$ 2023.
 :::
 
-First Edition.
+First Edition. 
 
-Version date: 1.0.
+Version date: `r format(Sys.Date(), "%B %d, %Y")`.
 
 This textbook is available under a Creative Commons Attribution-ShareAlike 4.0 International.
 License details are available at the Creative Commons website:\
